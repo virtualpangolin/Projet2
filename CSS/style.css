@@ -1,0 +1,206 @@
+body
+{
+    font-family: 'Raleway', sans-serif;
+}
+
+/* ---------- header ----------*/
+
+header
+{
+    display: flex;
+    margin: 0 auto 30px auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+header #logo-container{
+    flex-grow: 1;
+    padding-top: 15px;
+}
+
+header nav ul
+{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 330px;
+    justify-content: space-around;
+}
+
+header nav li a
+{
+    padding-top: 30px;
+    display: block;
+}
+
+header nav li
+{
+    list-style: none;
+}
+
+#inscrire
+{
+    padding-top: 30px;
+    color: #0065FC;
+    font-weight: bold;
+    margin-right: 1%;
+}
+
+header a
+{
+    text-decoration: none;
+    color: black;
+}
+
+header nav a:hover
+{
+    border-top: 2px solid #0065FC;
+    color: #0065FC;
+}
+/* ---------- titles and search ----------*/
+
+h1
+{
+    font-size: 1.5em;
+}
+
+#search
+{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+}
+
+#locationdot
+{
+    width: 50px;
+    height: 35px;
+    text-align: center;
+    background-color: #F2F2F2;
+    border-radius: 15px 0 0 15px;
+    padding-top: 15px;
+}
+
+#textsearch
+{
+    padding-left: 15px;
+    font-weight: bold;
+    border: 2px #F2F2F2 solid;
+    font-size: 1.2em;
+}
+
+#searchbutton
+{
+    padding: 0 15px 0 15px;
+    font-weight: bold;
+    background-color: #0065FC;
+    color: #ffffff;
+    border: 2px #0065FC solid;
+    border-radius: 0 15px 15px 0px;
+    font-size: 1.2em;
+}
+
+/* ---------- filters ---------- */
+
+#divfilters h2
+{
+    font-size: 1.2em;
+    padding-top: 15px;
+}
+
+#divfilters
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#divfilters ul
+{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+#divfilters a
+{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border: 3px #F2F2F2 solid;
+    padding: 13px 25px;
+    border-radius: 0 50px 50px 0px;
+}
+
+#divfilters div
+{
+    width: 250px;
+}
+
+#divfilters i
+{
+    color: #0065FC;
+    border: 3px #DEEBFF solid;
+    background-color: #DEEBFF;
+    padding: 15px 15px;
+    border-radius: 50px;
+}
+
+#divfilters a:hover
+{
+    color: #0065FC;
+}
+
+/* ---------- info ---------- */
+
+#iconinfo
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#iconinfo i
+{
+    color: #0065FC;
+    border: 2px #F2F2F2 solid;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+/* ---------- main ----------*/
+
+main li
+{
+    list-style: none;
+    padding: 0 15px 0 15px;
+}
+
+main ul
+{
+    display: flex;
+}
+
+main img
+{
+    width: 240px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+main i
+{
+    color: #0065FC;
+}
+
+#hebergements 
+{
+    background-color: #F2F2F2;
+}
+
+#hebergements div
+{
+    background-color: #ffffff;
+}
