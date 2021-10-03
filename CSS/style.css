@@ -1,4 +1,4 @@
-body
+*
 {
     font-family: 'Raleway', sans-serif;
 }
@@ -44,6 +44,7 @@ header nav li
     color: #0065FC;
     font-weight: bold;
     margin-right: 1%;
+    margin-left: 30px;
 }
 
 header a
@@ -57,6 +58,7 @@ header nav a:hover
     border-top: 2px solid #0065FC;
     color: #0065FC;
 }
+
 /* ---------- titles and search ----------*/
 
 h1
@@ -66,9 +68,11 @@ h1
 
 #search
 {
-  display: flex;
-  flex-direction: row;
-  height: 50px;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
 #locationdot
@@ -102,12 +106,6 @@ h1
 
 /* ---------- filters ---------- */
 
-#divfilters h2
-{
-    font-size: 1.2em;
-    padding-top: 15px;
-}
-
 #divfilters
 {
     display: flex;
@@ -121,33 +119,41 @@ h1
     list-style: none;
 }
 
+#divfilters h2
+{
+    font-size: 1.2em;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+#divfilters li
+{
+    border: 3px #F2F2F2 solid;
+    border-radius: 50px 50px 50px 50px;
+    margin-right: 25px;
+}
+
 #divfilters a
 {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    border: 3px #F2F2F2 solid;
-    padding: 13px 25px;
-    border-radius: 0 50px 50px 0px;
-}
-
-#divfilters div
-{
-    width: 250px;
-}
-
-#divfilters i
-{
-    color: #0065FC;
-    border: 3px #DEEBFF solid;
-    background-color: #DEEBFF;
-    padding: 15px 15px;
-    border-radius: 50px;
+    padding-right: 20px;
+    padding-left: 12px;
 }
 
 #divfilters a:hover
 {
     color: #0065FC;
+    font-size: 1.1em;
+}
+
+#divfilters i
+{
+    color: #0065FC;
+    background-color: #DEEBFF;
+    border-radius: 50px;
+    padding: 15px 15px;
 }
 
 /* ---------- info ---------- */
@@ -156,51 +162,174 @@ h1
 {
     display: flex;
     flex-direction: row;
+    margin-top: 18px;
+    margin-bottom: 33px;
 }
 
 #iconinfo i
 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #0065FC;
     border: 2px #F2F2F2 solid;
     width: 25px;
     height: 25px;
+    margin-right: 13px;
     border-radius: 50px;
-    text-align: center;
-    padding-top: 15px;
+    font-size: 0.8em;
 }
 
 /* ---------- main ----------*/
 
-main li
+main
 {
-    list-style: none;
-    padding: 0 15px 0 15px;
+    display: grid;
+    grid-template-areas: "divhebergements divpopulaires";
+    grid-gap: 50px;
 }
 
-main ul
+.sectionhebergements img
 {
-    display: flex;
-}
-
-main img
-{
-    width: 240px;
-    height: 120px;
+    width: 245px;
+    height: 117px;
     object-fit: cover;
     border-radius: 15px 15px 0 0;
 }
 
-main i
+.sectionpopulaires img
 {
+    width: 135px;
+    height: 143px;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+
+.sectionhebergements
+{
+    background-color: #F2F2F2;
+    border-radius: 15px 15px 15px 15px;
+    padding-bottom: 25px;
+    padding-right: 40px;
+    padding-left: 8px;
+}
+
+.sectionpopulaires
+{
+    background-color: #F2F2F2;
+    border-radius: 15px 15px 15px 15px;
+    padding-bottom: 25px;
+    margin-right: 60px;
+}
+
+.sectionhebergements article
+{
+    background-color: #ffffff;
+    border-radius: 20px 20px 20px 20px;
+    margin: auto;
+    padding: 5px 5px 0px 5px;
+    margin-bottom: 32px;
+    margin-left: 32px;
+    box-shadow: 1px 1px 10px #cccccc;
+}
+
+.sectionpopulaires article
+{
+    background-color: #ffffff;
+    border-radius: 20px 20px 20px 20px;
+    margin: auto;
+    padding: 5px 0 2px 5px;
+    margin-bottom: 32px;
+    margin-right: 80px;
+    box-shadow: 1px 1px 10px #cccccc;
+}
+
+.sectionhebergements h2
+{
+    margin-left: 33px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    font-size: 2.6ex;
+}
+
+.sectionpopulaires h2
+{
+    font-size: 2.6ex;
+}
+
+.iconchart
+{
+    padding-top: 27px;
+    margin-left: 110px;
+    font-size: 1.5em;
+}
+
+.titleiconpop
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.divhebergements
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.divpopulaires
+{
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+main h3
+{
+    font-size: 2ex;
+}
+
+main p
+{
+    font-size: 1.7ex;
+}
+
+main .iconstar
+{
+    font-size: 1.4ex;
     color: #0065FC;
 }
 
-#hebergements 
+main .greystar
 {
-    background-color: #F2F2F2;
+    color: #F2F2F2;
 }
 
-#hebergements div
+.price
 {
-    background-color: #ffffff;
+    font-weight: bold;
+}
+
+.art7, .art8, .art9
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.carcontainer, h3, p
+{
+    line-height: 0.3;
+}
+
+.affich
+{
+    font-size: 2.4ex;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+#sectionActivites img
+{
+    width: 320px;
+    height: 410px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
 }
