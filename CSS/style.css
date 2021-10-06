@@ -75,7 +75,7 @@ h1
     margin-bottom: 15px;
 }
 
-#locationdot
+#locationDot
 {
     width: 50px;
     height: 35px;
@@ -85,7 +85,7 @@ h1
     padding-top: 15px;
 }
 
-#textsearch
+#textSearch
 {
     padding-left: 15px;
     font-weight: bold;
@@ -93,7 +93,7 @@ h1
     font-size: 1.2em;
 }
 
-#searchbutton
+#searchButton
 {
     padding: 0 15px 0 15px;
     font-weight: bold;
@@ -106,34 +106,34 @@ h1
 
 /* ---------- filters ---------- */
 
-#divfilters
+#divFilters
 {
     display: flex;
     flex-direction: row;
 }
 
-#divfilters ul
+#divFilters ul
 {
     display: flex;
     flex-direction: row;
     list-style: none;
 }
 
-#divfilters h2
+#divFilters h2
 {
     font-size: 1.2em;
     padding-top: 15px;
     padding-left: 10px;
 }
 
-#divfilters li
+#divFilters li
 {
     border: 3px #F2F2F2 solid;
     border-radius: 50px 50px 50px 50px;
     margin-right: 25px;
 }
 
-#divfilters a
+#divFilters a
 {
     text-decoration: none;
     color: black;
@@ -142,13 +142,13 @@ h1
     padding-left: 12px;
 }
 
-#divfilters a:hover
+#divFilters a:hover
 {
     color: #0065FC;
     font-size: 1.1em;
 }
 
-#divfilters i
+#divFilters i
 {
     color: #0065FC;
     background-color: #DEEBFF;
@@ -158,7 +158,7 @@ h1
 
 /* ---------- info ---------- */
 
-#iconinfo
+#iconInfo
 {
     display: flex;
     flex-direction: row;
@@ -166,7 +166,7 @@ h1
     margin-bottom: 33px;
 }
 
-#iconinfo i
+#iconInfo i
 {
     display: flex;
     justify-content: center;
@@ -182,14 +182,101 @@ h1
 
 /* ---------- main ----------*/
 
-main
+/* ---------- section Hébergements ---------- */
+
+.divHebergements
 {
-    display: grid;
-    grid-template-areas: "divhebergements divpopulaires";
-    grid-gap: 50px;
+    grid-area: divHebergements;
 }
 
-.sectionhebergements img
+.divPopulaires
+{
+    grid-area: divPopulaires;
+}
+
+.divHebergements h2
+{
+    grid-area: title;
+}
+
+#art1
+{
+    grid-area: art1;
+}
+
+#art2
+{
+    grid-area: art2;
+}
+
+#art3
+{
+    grid-area: art3;
+}
+
+#art4
+{
+    grid-area: art4;
+}
+
+#art5
+{
+    grid-area: art5;
+}
+
+#art6
+{
+    grid-area: art6;
+}
+
+.affich
+{
+    grid-area: affich;
+}
+
+.sectionHebergements
+{
+    display: grid;
+    grid-gap: 40px;
+    grid-template-areas: "divHebergements divPopulaires";
+}
+
+.divHebergements
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "title title title"
+    "art1 art2 art3"
+    "art4 art5 art6"
+    "affich affich affich";
+    grid-template-rows: auto auto 1fr auto;
+}
+
+.divPopulaires
+{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "title"
+    "art7"
+    "art8"
+    "art9";
+    grid-template-rows: auto auto auto auto;
+}
+
+.divHebergements .classArtHeber
+{
+    margin: auto;
+    border-radius: 20px;
+}
+
+.divPopulaires .classArtPop
+{
+    margin: auto;
+    border-radius: 20px;
+}
+
+.imgContainerHeber img
 {
     width: 245px;
     height: 117px;
@@ -197,7 +284,7 @@ main
     border-radius: 15px 15px 0 0;
 }
 
-.sectionpopulaires img
+.imgContainerPop img
 {
     width: 135px;
     height: 143px;
@@ -205,131 +292,153 @@ main
     border-radius: 15px 0 0 15px;
 }
 
-.sectionhebergements
+.divHebergements
 {
     background-color: #F2F2F2;
     border-radius: 15px 15px 15px 15px;
-    padding-bottom: 25px;
-    padding-right: 40px;
-    padding-left: 8px;
 }
 
-.sectionpopulaires
+.divPopulaires
 {
     background-color: #F2F2F2;
     border-radius: 15px 15px 15px 15px;
-    padding-bottom: 25px;
-    margin-right: 60px;
 }
 
-.sectionhebergements article
+.classArtHeber
 {
     background-color: #ffffff;
     border-radius: 20px 20px 20px 20px;
-    margin: auto;
     padding: 5px 5px 0px 5px;
-    margin-bottom: 32px;
-    margin-left: 32px;
     box-shadow: 1px 1px 10px #cccccc;
 }
 
-.sectionpopulaires article
+#art3, #art6
+{
+    margin-right: 40px;
+}
+
+.classArtPop
 {
     background-color: #ffffff;
     border-radius: 20px 20px 20px 20px;
-    margin: auto;
     padding: 5px 0 2px 5px;
-    margin-bottom: 32px;
-    margin-right: 80px;
     box-shadow: 1px 1px 10px #cccccc;
 }
 
-.sectionhebergements h2
-{
-    margin-left: 33px;
-    padding-top: 25px;
-    padding-bottom: 10px;
-    font-size: 2.6ex;
-}
-
-.sectionpopulaires h2
-{
-    font-size: 2.6ex;
-}
-
-.iconchart
-{
-    padding-top: 27px;
-    margin-left: 110px;
-    font-size: 1.5em;
-}
-
-.titleiconpop
-{
-    display: flex;
-    flex-direction: row;
-}
-
-.divhebergements
-{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.divpopulaires
-{
-    padding-left: 40px;
-    padding-top: 20px;
-}
-
-main h3
+main .cardContainer h3
 {
     font-size: 2ex;
+    line-height: 0.3;
+    padding-left: 10px;
 }
 
-main p
+main .cardContainer p
 {
     font-size: 1.7ex;
+    line-height: 0.3;
+    padding-left: 10px;
 }
 
-main .iconstar
+main .cardContainer .iconStar
 {
     font-size: 1.4ex;
     color: #0065FC;
+    line-height: 0.3;
+    padding-bottom: 10px;
+    padding-left: 10px;
 }
 
-main .greystar
+main .greyStar
 {
     color: #F2F2F2;
 }
 
-.price
+main .price
 {
     font-weight: bold;
 }
 
-.art7, .art8, .art9
+.divHebergements h2
+{
+    font-size: 2.6ex;
+}
+
+.titleIconPop
 {
     display: flex;
-    flex-direction: row;
+    
 }
 
-.carcontainer, h3, p
+.divPopulaires h2
 {
-    line-height: 0.3;
+    font-size: 2.6ex;
 }
 
-.affich
+.iconChart
 {
-    font-size: 2.4ex;
-    font-weight: bold;
-    margin-left: 40px;
+    font-size: 1.5em;
+    padding-top: 27px;
+    margin-left: 110px;
 }
 
-#sectionActivites img
+.classArtPop
 {
-    width: 320px;
-    height: 410px;
-    object-fit: cover;
-    border-radius: 20px 20px 0 0;
+    display: flex;
+}
+
+/* ---------- section Actvités ---------- */
+
+.divActivites h2
+{
+    grid-area: title;
+}
+
+#art10
+{
+    grid-area: art10;
+}
+
+#art11
+{
+    grid-area: art11;
+}
+
+#art12
+{
+    grid-area: art12;
+}
+
+#art13
+{
+    grid-area: art13;
+}
+
+#art14
+{
+    grid-area: art14;
+}
+
+#art15
+{
+    grid-area: art15;
+}
+
+.divActivites
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "title title title title"
+    "art10 art11 art13 art14"
+    "art10 art12 art13 art15";
+    grid-template-rows: auto auto auto auto;
+}
+
+.divActivites .classArtActiv
+{
+    margin: auto;
+}
+
+.divActivites #art10, #art13
+{
+    grid-row: auto span2;
 }
