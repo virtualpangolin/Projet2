@@ -1,444 +1,606 @@
-*
-{
+/* -- -- -- -- Propriétés générales -- -- -- -- */
+
+*{
     font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* ---------- header ----------*/
-
-header
-{
-    display: flex;
-    margin: 0 auto 30px auto;
-    flex-direction: row;
-    flex-wrap: wrap;
+ul{
+    list-style: none;
 }
 
-header #logo-container{
-    flex-grow: 1;
-    padding-top: 15px;
+a{
+    text-decoration: none;
+    color: black;
 }
 
-header nav ul
-{
-    display: flex;
-    flex-direction: row;
+input:focus{
+    outline: none;
+}
+
+h2{
+    font-size:1.3em;
+}
+
+.blue{color: #0065FC;}
+.lightGrey{color: #F2F2F2;}
+.bgBlue{background-color: #0065FC;}
+.bgLightBlue{background-color: #DEEBFF;}
+.bgLightGrey{background-color: #F2F2F2;}
+.bdLightGrey{border-color: #F2F2F2;}
+
+/* -- -- -- -- Wrapper -- -- -- -- */
+
+.wrapper{
+    max-width: 1440px;
     margin: 0 auto;
-    width: 330px;
-    justify-content: space-around;
+    padding: 0 50px;
+}
+#hebergements.wrapper{
+    max-width: none;
+    margin: 0;
+}
+footer.wrapper{
+    padding: 40px 50px 40px 50px;
 }
 
-header nav li a
-{
-    padding-top: 30px;
-    display: block;
+/* -- -- -- -- Grid Main Hébergements/Populaires -- -- -- -- */
+
+#hebergements{grid-area: hebergements;}
+#populaires{grid-area: populaires;}
+
+#main-hebergements.grid{
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 45px;
+    grid-template-areas:
+        "hebergements populaires";
 }
 
-header nav li
-{
-    list-style: none;
-}
+/* -- -- -- -- Grid Hébergements -- -- -- -- */
 
-#inscrire
-{
-    padding-top: 30px;
-    color: #0065FC;
-    font-weight: bold;
-    margin-right: 1%;
-    margin-left: 30px;
-}
+#hebergements h2{grid-area: titre;}
+#artH1{grid-area: artH1;}
+#artH2{grid-area: artH2;}
+#artH3{grid-area: artH3;}
+#artH4{grid-area: artH4;}
+#artH5{grid-area: artH5;}
+#artH6{grid-area: artH6;}
+#hebergements a{grid-area: afficherPlus;}
 
-header a
-{
-    text-decoration: none;
-    color: black;
-}
-
-header nav a:hover
-{
-    border-top: 2px solid #0065FC;
-    color: #0065FC;
-}
-
-/* ---------- titles and search ----------*/
-
-h1
-{
-    font-size: 1.5em;
-}
-
-#search
-{
-    display: flex;
-    flex-direction: row;
-    height: 50px;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-#locationDot
-{
-    width: 50px;
-    height: 35px;
-    text-align: center;
+#hebergements.grid{
+    display: grid;
+    grid-gap: 28px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-areas: 
+    "titre titre titre"
+    "artH1 artH2 artH3"
+    "artH4 artH5 artH6"
+    "afficherPlus afficherPlus afficherPlus";
     background-color: #F2F2F2;
-    border-radius: 15px 0 0 15px;
-    padding-top: 15px;
 }
 
-#textSearch
-{
-    padding-left: 15px;
-    font-weight: bold;
-    border: 2px #F2F2F2 solid;
-    font-size: 1.2em;
+/* -- -- -- -- Grid Populaires -- -- -- -- */
+
+#populaires h2{grid-area: titre;}
+#artP1{grid-area: artP1;}
+#artP2{grid-area: artP2;}
+#artP3{grid-area: artP3;}
+
+#populaires.grid{
+  display: grid;
+  grid-gap: 28px;
+  grid-template-rows: auto 1fr 1fr 1fr;
+  grid-template-areas:
+    "titre"
+    "artP1"
+    "artP2"
+    "artP3";
+  background-color: #F2F2F2;
 }
 
-#searchButton
-{
-    padding: 0 15px 0 15px;
-    font-weight: bold;
-    background-color: #0065FC;
-    color: #ffffff;
-    border: 2px #0065FC solid;
-    border-radius: 0 15px 15px 0px;
-    font-size: 1.2em;
+/* -- -- -- -- Grid Activités-- -- -- -- */
+
+#main-activites h2 {grid-area: titre;}
+#artA1 {grid-area: artA1;}
+#artA2 {grid-area: artA2;}
+#artA3 {grid-area: artA3;}
+#artA4 {grid-area: artA4;}
+
+#main-activites.grid {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "titre titre titre titre"
+      "artA1 artA2 artA3 artA4";
 }
 
-/* ---------- filters ---------- */
+/* -- -- -- -- Grid Footer -- -- -- -- */
 
-#divFilters
-{
+#footer-about {grid-area:about;}
+#footer-hebergements {grid-area:hebergements;}
+#footer-assistance {grid-area:assistance;}
+
+footer.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 16px;
+    grid-template-areas:
+        "about hebergements assistance";
+    background-color: #F2F2F2;
+}
+/* -- -- -- -- header -- -- -- -- */
+
+header{
     display: flex;
-    flex-direction: row;
 }
 
-#divFilters ul
-{
+header img{
+    margin-right: auto;
+    width: 90px;
+    padding-top: 45px;
+}
+
+nav ul{
     display: flex;
-    flex-direction: row;
-    list-style: none;
+    width: 320px;
 }
 
-#divFilters h2
-{
-    font-size: 1.2em;
-    padding-top: 15px;
-    padding-left: 10px;
+header nav ul li{
+    width: 50%;
 }
 
-#divFilters li
-{
-    border: 3px #F2F2F2 solid;
-    border-radius: 50px 50px 50px 50px;
-    margin-right: 25px;
-}
-
-#divFilters a
-{
-    text-decoration: none;
-    color: black;
+header a{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 70px;
+    width: 120px;
     font-weight: bold;
-    padding-right: 20px;
-    padding-left: 12px;
 }
 
-#divFilters a:hover
-{
+header nav ul li a:hover{
+    border-top: 2px solid;
     color: #0065FC;
+    text-decoration: none;
+}
+
+/* -- -- -- -- Titres et recherche -- -- -- -- */
+
+#main-rechercher h1{
+    margin-top: 35px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#main-rechercher h2{
+    font-size: 17.7px;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+#divRechercher{
+    display: flex;
+    margin-top: 20px;
+}
+
+#icon-map{
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px 0 0 15px;
+}
+
+#icon-map i{
+    font-size: 18px;
+    margin-left: 17px;
+}
+
+#textSearch{
+    font-weight: bold;
+    width: 70%;
+    max-width: 235px;
+    height: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-right: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.BouttonRechercher{
+    height: 50px;
+    background-color: #0065FC;
+    color: white;
+    border-radius: 0px 15px 15px 0px;
+    border: none; 
+    font-weight: bold;
+}
+
+.texteBoutton{
+    padding: 10px;
+}
+
+button{
+    cursor: pointer;
+}
+
+.icon-button{
+    display: none !important;
+}
+
+/* -- -- -- -- Filtres -- -- -- -- */
+
+#main-filtres{
+    display: flex;
+    margin-top: 30px;
+}
+
+#filtresTitre{
+    font-weight: bold;
+    margin-right: 25px;
+    padding-top: 12px;
+}
+
+#main-filtres li:hover{
+    color: #0065FC;
+}
+
+#main-filtres ul span:hover{
     font-size: 1.1em;
 }
 
-#divFilters i
-{
-    color: #0065FC;
-    background-color: #DEEBFF;
-    border-radius: 50px;
-    padding: 15px 15px;
+#main-filtres li{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid #F2F2F2;
+    border-radius: 35px;
+    margin-right: 32px;
+    margin-bottom: 10px;
+    padding-left: 56px;
+    padding-right: 22px;
+    font-weight: bold;
+    height: 45px;
+    position: relative;
 }
 
-/* ---------- info ---------- */
-
-#iconInfo
-{
-    display: flex;
-    flex-direction: row;
-    margin-top: 18px;
-    margin-bottom: 33px;
-}
-
-#iconInfo i
-{
+#main-filtres li .icon-filter {
+    height: 45px;
+    width: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #0065FC;
-    border: 2px #F2F2F2 solid;
-    width: 25px;
-    height: 25px;
-    margin-right: 13px;
-    border-radius: 50px;
-    font-size: 0.8em;
+    border-radius: 50%;
+    background-color: #DEEBFF;
+    margin-right: 10px;
+    border: 2px solid #DEEBFF;
+    position: absolute;
+    left: -1px;
 }
 
-/* ---------- main ----------*/
+/* -- -- -- -- Information -- -- -- -- */
 
-/* ---------- section Hébergements ---------- */
-
-.divHebergements
-{
-    grid-area: divHebergements;
+#main-info{
+    display: flex;
+    margin-top: 30px;
 }
 
-.divPopulaires
-{
-    grid-area: divPopulaires;
-}
-
-.divHebergements h2
-{
-    grid-area: title;
-}
-
-#art1
-{
-    grid-area: art1;
-}
-
-#art2
-{
-    grid-area: art2;
-}
-
-#art3
-{
-    grid-area: art3;
-}
-
-#art4
-{
-    grid-area: art4;
-}
-
-#art5
-{
-    grid-area: art5;
-}
-
-#art6
-{
-    grid-area: art6;
-}
-
-.affich
-{
-    grid-area: affich;
-}
-
-.sectionHebergements
-{
-    display: grid;
-    grid-gap: 40px;
-    grid-template-areas: "divHebergements divPopulaires";
-}
-
-.divHebergements
-{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "title title title"
-    "art1 art2 art3"
-    "art4 art5 art6"
-    "affich affich affich";
-    grid-template-rows: auto auto 1fr auto;
-}
-
-.divPopulaires
-{
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 1fr;
-    grid-template-areas: "title"
-    "art7"
-    "art8"
-    "art9";
-    grid-template-rows: auto auto auto auto;
-}
-
-.divHebergements .classArtHeber
-{
-    margin: auto;
-    border-radius: 20px;
-}
-
-.divPopulaires .classArtPop
-{
-    margin: auto;
-    border-radius: 20px;
-}
-
-.imgContainerHeber img
-{
-    width: 245px;
-    height: 117px;
-    object-fit: cover;
-    border-radius: 15px 15px 0 0;
-}
-
-.imgContainerPop img
-{
-    width: 135px;
-    height: 143px;
-    object-fit: cover;
-    border-radius: 15px 0 0 15px;
-}
-
-.divHebergements
-{
-    background-color: #F2F2F2;
-    border-radius: 15px 15px 15px 15px;
-}
-
-.divPopulaires
-{
-    background-color: #F2F2F2;
-    border-radius: 15px 15px 15px 15px;
-}
-
-.classArtHeber
-{
-    background-color: #ffffff;
-    border-radius: 20px 20px 20px 20px;
-    padding: 5px 5px 0px 5px;
-    box-shadow: 1px 1px 10px #cccccc;
-}
-
-#art3, #art6
-{
-    margin-right: 40px;
-}
-
-.classArtPop
-{
-    background-color: #ffffff;
-    border-radius: 20px 20px 20px 20px;
-    padding: 5px 0 2px 5px;
-    box-shadow: 1px 1px 10px #cccccc;
-}
-
-main .cardContainer h3
-{
-    font-size: 2ex;
-    line-height: 0.3;
-    padding-left: 10px;
-}
-
-main .cardContainer p
-{
-    font-size: 1.7ex;
-    line-height: 0.3;
-    padding-left: 10px;
-}
-
-main .cardContainer .iconStar
-{
-    font-size: 1.4ex;
-    color: #0065FC;
-    line-height: 0.3;
-    padding-bottom: 10px;
-    padding-left: 10px;
-}
-
-main .greyStar
-{
+#main-info .icon-info{
+    width: 26px;
+    height: 26px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
     color: #F2F2F2;
 }
 
-main .price
-{
+#main-info .icon-info i{
+    font-size: small;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+
+#main-info span{
+    margin-left: 12px;
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+/* -- -- -- -- Hebergements -- -- -- -- */
+
+#main-hebergements{
+    margin-top: 50px;
+}
+
+#main-hebergements h2{
+    font-weight: bold;
+    color: black;
+}
+
+#main-hebergements h3{
+    font-weight: bold;
+    color: black;
+}
+
+#main-hebergements span{
+    font-size: small;
+    font-weight: bold;
+    color: black;
+}
+
+#main-hebergements a{
+    font-size: 1.2em;
     font-weight: bold;
 }
 
-.divHebergements h2
-{
-    font-size: 2.6ex;
+#hebergements{
+    padding: 40px 40px 40px 40px;
+    border-radius: 20px 20px 20px 20px;
 }
 
-.titleIconPop
-{
+#hebergements a{
+    padding-top: 5px;
+}
+
+#hebergements .articleInfo{
     display: flex;
-    
+    flex-direction: column;
+    justify-content: space-between;
+    height: 31%;
+    margin-top: 8px;
+    margin-left: 8px;
 }
 
-.divPopulaires h2
-{
-    font-size: 2.6ex;
+.artHebergements{
+    width: 100%;
+    max-height: 200px;
+    min-width: 190px;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px #cccccc;
+    background-color: #FFFFFF;
+    padding: 5px 5px 0px 5px;
 }
 
-.iconChart
-{
-    font-size: 1.5em;
-    padding-top: 27px;
-    margin-left: 110px;
+.artHebergements .imgBox{
+    width: 100%;
+    height: 60%;
 }
 
-.classArtPop
-{
+.artHebergements img{
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.artHebergements p{
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.artHebergements p{
+    font-size: 13px;
+}
+
+.artHebergements i{
+    font-size: 12px;
+    letter-spacing: -3px;
+}
+
+/* -- -- -- -- Populaires -- -- -- -- */
+
+#populaires{
+    padding: 40px 40px 40px 40px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+#populaires #conteneurTitre-icon{
     display: flex;
 }
 
-/* ---------- section Actvités ---------- */
-
-.divActivites h2
-{
-    grid-area: title;
+#populaires #conteneurTitre-icon h2{
+    margin-right: auto;
 }
 
-#art10
-{
-    grid-area: art10;
+#populaires #conteneurTitre-icon i{
+    font-size: 23px;
 }
 
-#art11
-{
-    grid-area: art11;
+#populaires .flexConteneur-art{
+    display: flex;
 }
 
-#art12
-{
-    grid-area: art12;
+#populaires .articleInfo{
+    margin-top: 8px;
+    margin-left: 13px;
 }
 
-#art13
-{
-    grid-area: art13;
+main .artPopulaires{
+    width: 100%;
+    height: 100%;
+    max-width: 343px;
+    min-width: 290px;
+    min-height: 143px;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px #cccccc;
+    background-color: #FFFFFF;
+    padding: 5px 5px 0px 5px;
 }
 
-#art14
-{
-    grid-area: art14;
+main .artPopulaires .imgBox{
+    border-radius: 15px 15px 0 0;
+    width: 42%;
+    height: 143px;
 }
 
-#art15
-{
-    grid-area: art15;
+main .artPopulaires img{
+    border-radius: 15px 0px 0 15px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    width: 130px;
+    max-height: 138px;
 }
 
-.divActivites
-{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "title title title title"
-    "art10 art11 art13 art14"
-    "art10 art12 art13 art15";
-    grid-template-rows: auto auto auto auto;
+#populaires .articleInfo{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-right: 25px;
+    justify-content: space-between;
 }
 
-.divActivites .classArtActiv
-{
-    margin: auto;
+#populaires p{
+    padding-top: 8px;
+    font-size: 14px;
+    font-weight: normal;
 }
 
-.divActivites #art10, #art13
-{
-    grid-row: auto span2;
+#populaires .starBox{
+    padding-bottom: 10px;
 }
+
+#populaires .starBox i{
+    font-size: 12px;
+}
+
+/* -- -- -- -- Activités -- -- -- -- */
+
+#main-activites{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#main-activites h2{
+    font-weight: bold;
+}
+
+#main-activites .articleInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 33%;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.artActivites{
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px #cccccc;
+    background-color: #FFFFFF;
+}
+
+.artActivites img{
+    border-radius: 20px 20px 0 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.artActivites h3{
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#artA2-a, #artA4-a{
+    margin-bottom: 40px;
+}
+
+#artA1, #artA3{
+    height: 445px;
+}
+
+#artA1 #imgBoxA1,
+#artA3 #imgBoxA3{
+  height: 385px;
+}
+
+#artA1 #imgBoxA1 img{
+    object-fit: none;
+    object-position: 52% 40%;
+}
+
+#artA2-a{
+    height: 240px;
+}
+
+#artA2-a #imgBoxA2-a{
+    height: 180px;
+}
+
+#artA2-a #imgBoxA2-a img{
+    object-fit: cover;
+    object-position: 52% 40%;
+}
+
+#artA2-b{
+    height: 165px;
+}
+
+#artA2-b #imgBoxA2-b{
+    height: 104px;
+}
+
+#artA2-b #imgBoxA2-b img{
+    object-fit: cover;
+    object-position: 50% 25%;
+}
+
+#artA3 #imgBoxA3 img{
+    object-fit: none;
+    object-position: 51% -9%;
+}
+
+#artA4-a,#artA4-b{
+    height: 202px;
+}
+
+#artA4-a #imgBoxA4-a,
+#artA4-b #imgBoxA4-b{
+  height: 142px;
+}
+
+#artA4-a #imgBoxA4-a img{
+    object-fit: cover;
+    object-position: 50% 0%;
+}
+
+#artA4-b #imgBoxA4-b img{
+    object-fit: cover;
+    object-position: 50% 25%;
+}
+
+/* -- -- -- -- Footer -- -- -- -- */
+
+footer .contenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer h3{
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+footer ul li{
+    padding-top: 5px;
+}
+
+#footer-hebergements, #footer-assistance{
+    height: 80px;
+}
+
