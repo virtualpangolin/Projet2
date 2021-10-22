@@ -55,7 +55,7 @@ footer.wrapper{
 #main-hebergements.grid{
     display: grid;
     grid-template-rows: auto;
-    grid-gap: 45px;
+    grid-gap: 40px;
     grid-template-areas:
         "hebergements populaires";
 }
@@ -135,6 +135,7 @@ footer.grid{
         "about hebergements assistance";
     background-color: #F2F2F2;
 }
+
 /* -- -- -- -- header -- -- -- -- */
 
 header{
@@ -215,7 +216,7 @@ header nav ul li a:hover{
     padding-right: 15px;
 }
 
-.BouttonRechercher{
+.boutonRechercher{
     height: 50px;
     background-color: #0065FC;
     color: white;
@@ -224,7 +225,7 @@ header nav ul li a:hover{
     font-weight: bold;
 }
 
-.texteBoutton{
+.texteBouton{
     padding: 10px;
 }
 
@@ -234,6 +235,8 @@ button{
 
 .icon-button{
     display: none !important;
+    background: none;
+    border: none;
 }
 
 /* -- -- -- -- Filtres -- -- -- -- */
@@ -313,6 +316,7 @@ button{
     margin-left: 12px;
     font-size: 16px;
     margin-top: 3px;
+    white-space:normal;
 }
 
 /* -- -- -- -- Hebergements -- -- -- -- */
@@ -363,7 +367,7 @@ button{
 .artHebergements{
     width: 100%;
     max-height: 200px;
-    min-width: 190px;
+    min-width: 250px;
     border-radius: 20px;
     box-shadow: 1px 2px 5px #cccccc;
     background-color: #FFFFFF;
@@ -604,3 +608,437 @@ footer ul li{
     height: 80px;
 }
 
+/* -- -- -- -- Media queries -- -- -- -- */
+
+/* -- -- -- -- Media Queries Grid Hébergements/Populaires -- -- -- -- */
+
+@media all and (max-width: 1024px){
+    #main-hebergements.grid{
+      display: grid;
+      grid-gap: 0px;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: 
+          "populaires"
+          "hebergements";
+    }
+  }
+
+/* -- -- -- -- Media Queries Grid Hébergements -- -- -- -- */
+
+/*Hebergements et Populaires sont alignés*/
+@media all and (min-width: 1025px) and (max-width: 1300px){
+    #hebergements.grid{
+      display: grid;
+      grid-gap: 28px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+          "titre titre"
+          "artH1 artH2"
+          "artH3 artH4"
+          "artH5 artH6"
+          "afficherPlus afficherPlus"; 
+    }
+  }
+
+/*grid hebergements sous populaires*/
+@media all and (min-width: 721px) and (max-width: 1024px){
+    #hebergements.grid{
+      display: grid;
+      grid-gap: 28px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto 1fr 1fr auto;
+      grid-template-areas:
+          "titre titre titre"
+          "artH1 artH2 artH3"
+          "artH4 artH5 artH6"
+          "afficherPlus afficherPlus afficherPlus";
+      background-color: white;
+      border-radius: 0px;     
+    }
+  }
+
+@media all and (min-width: 465px) and (max-width: 720px){
+    #hebergements.grid{
+      display: grid;
+      grid-gap: 28px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+          "titre titre"
+          "artH1 artH2"
+          "artH3 artH4"
+          "artH5 artH6"
+          "afficherPlus afficherPlus"; 
+      border-radius: 0px;
+      background-color: white;   
+    }
+  }
+
+@media all and (max-width: 464px){
+    #hebergements.grid{
+      display: grid;
+      grid-gap: 28px;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+          "titre"
+          "artH1"
+          "artH2"
+          "artH3" 
+          "artH4"
+          "artH5"
+          "artH6"
+          "afficherPlus";
+      border-radius: 0px;
+      background-color: white;     
+    }
+  }
+
+/* -- -- -- -- Media Queries Grid Populaires -- -- -- -- */
+
+@media all and (min-width: 1025px) and (max-width: 1300px){
+    #populaires.grid{
+      display: grid;
+      grid-gap: 35px;
+      grid-template-columns: auto;
+      grid-template-rows: auto auto auto auto 1fr;
+      grid-template-areas:
+          "titre"
+          "artP1"
+          "artP2"
+          "artP3"
+          ".";  
+      }
+  }
+
+@media all and (min-width: 768px) and (max-width: 1024px){
+  #populaires.grid{
+    display: grid;
+    grid-gap: 35px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "titre titre"
+        "artP1 artP2"
+        "artP3 artP3";
+    border-radius: 0px;
+    background-color: #F2F2F2;  
+  }
+
+#conteneurTitre-icon{
+    grid-column-start: 1;
+    grid-column-end: span 2;
+  }
+}
+
+@media all and (max-width: 767px){
+    #populaires.grid{
+      display: grid;
+      grid-gap: 28px;
+      grid-template-rows: auto 1fr 1fr 1fr;
+      grid-template-areas:
+          "titre"
+          "artP1"
+          "artP2"
+          "artP3";
+      border-radius:  0px;
+      background-color:#F2F2F2;
+    }
+  }
+
+/* -- -- -- -- Media Queries Grid Activités -- -- -- -- */
+
+@media all and (min-width: 579px) and (max-width: 1024px){
+    #main-activites.grid{
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+          "titre titre"
+          "artA1 artA2"
+          "artA3 artA4";        
+    }
+  }
+
+@media all and (max-width: 579px){
+    #main-activites.grid{
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: auto;
+      grid-template-areas:
+          "titre"
+          "artA1"
+          "artA2"
+          "artA3"
+          "artA4"; 
+    }
+  }
+
+/* -- -- -- -- Media Queries Grid Footer -- -- -- -- */
+
+@media all and (min-width: 580px) and (max-width: 860px){
+    footer.grid{
+      display: grid;
+      grid-gap: 48px;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+          "aPropos hebergements"
+          " assistance assistance";
+    }
+  }
+
+@media all and (max-width: 579px){
+    footer.grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto ;
+      grid-template-areas:
+          "aPropos"
+          "hebergements"
+          "assistance";
+    }
+  }
+
+/* -- -- -- -- Media Queries Wrapper -- -- -- -- */
+
+@media all and (max-width: 1024px){
+    .wrapper{
+      padding: 0 30px;
+    }
+    #main-hebergements.wrapper{
+      padding: 0;
+    }
+    #hebergements.wrapper{
+      max-width: none;
+      margin: 0;
+      padding: 30px;
+    }
+    #populaires.wrapper{
+      max-width: none;
+      margin: 0;
+      padding: 30px;
+    }
+    footer.wrapper{
+      padding: 40px 30px 40px 30px;
+    }
+  } 
+  @media all and (max-width: 649px){
+    .wrapper{
+      min-width: 345px;
+      padding: 0 20px;
+    }
+    header.wrapper{
+      padding: 25px 0px 0px 0px;
+    }
+    #main-hebergements.wrapper{
+      padding: 0px;
+    }
+    #hebergements.wrapper{
+      max-width: none;
+      margin: 0;
+      padding: 20px;
+    }
+    #populaires.wrapper{
+      max-width: none;
+      margin: 0;
+      padding: 20px;
+      background-color: #F2F2F2;
+    }  
+    footer.wrapper{
+      padding: 40px 20px 0px 20px;
+      background-color: #F2F2F2;
+    }
+  }
+  @media all and (max-width: 579px){
+    footer.wrapper{
+      padding: 40px 20px 0px 20px;
+    }
+  }
+  
+  /* -- -- -- -- Media Queries Header -- -- -- -- */
+
+  @media all and (max-width: 649px){
+    header{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    header img{
+      margin-left: 20px;
+      padding-top: 0px;
+    }
+    header nav{
+      margin-top: 30px;
+      width: 100%;
+      order: 3;
+    }  
+    nav ul{
+      display:flex;
+      width: auto;
+    }
+    header nav ul li {
+      text-align: center;
+      width: 50%;
+    }
+    header a {
+      height: auto;
+    }
+    header nav ul li a {
+      justify-content: center;
+      align-items: normal;
+      height: 35px;
+      width: 100%;
+      padding: 0px 0px 10px 0px;
+      border-bottom: 3px solid #F2F2F2 ;
+    }
+    header nav ul li a:hover {
+      color:#0065FC;
+      border-top: none;
+      border-bottom: 3px solid #0065FC;
+    }
+    header a{
+      width: auto;
+      order: 2;
+      padding-bottom: 0px;
+      padding-right: 20px;
+    } 
+  }
+  
+  /* -- -- -- -- Media Queries Titre et Recherche -- -- -- -- */
+
+  @media all and (max-width: 415px){
+    #divRechercher{
+      margin-top: 40px;
+    }
+    .texteBouton{
+      display: none;
+    }
+    .icon-button:hover{
+      background-color: #0065FC;
+      border-radius: 25%;
+    }
+    .icon-button{
+      display: flex !important;
+      color: white;
+      border-radius: 25%;
+      width: 50px;
+      height: 50px;
+      background-color: #0065FC;
+      font-size: 16px;
+      align-items: center;
+      justify-content: center;
+    }
+    .boutonRechercher{
+      border-radius: 25%;
+      width: 45px;
+      height: 45px;
+    }
+  
+  }   
+  
+  /* -- -- -- -- Media Queries Filtres -- -- -- -- */
+
+  @media all and (max-width: 426px){
+    #main-filtres{
+      display: inline-block;
+    }
+    #filtresTitre{
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+  }
+  @media all and (min-width: 376px) and (max-width: 426px){
+    #main-filtres li{
+      margin-right: 6px;
+      padding-left: 55px;
+      padding-right: 15px;
+    }
+  }
+  @media all and (max-width: 375px){
+    #main-filtres li{
+      margin-right: 4px;
+      padding-left: 49px;
+      padding-right: 15px;
+    }
+  }
+  
+  /* -- -- -- -- Media Queries Hebergements -- -- -- -- */
+
+  @media all and (max-width: 579px){
+    #hebergements .artHebergements{
+      max-width: none;
+    }
+  }
+  
+  /* -- -- -- -- Media Queries Populaires -- -- -- -- */
+
+  @media all and (max-width: 390px){
+    #populaires .artPopulaires{
+      max-width: none;
+    }
+    #populaires{
+      padding: 0px;
+    }
+  }
+  
+  /* -- -- -- -- Media Queries Activites -- -- -- -- */
+
+  @media all and (max-width: 1024px){
+    #main-activites {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  @media all and (max-width: 579px){
+    #artA1, #artA2-a ,#artA2-b,
+    #artA3, #artA4-a, #artA4-b{
+      height: 205px;  
+    }
+    #artA1 #imgBoxA1,
+    #artA2-a #imgBoxA2-a,
+    #artA2-b #imgBoxA2-b,
+    #artA3 #imgBoxA3,
+    #artA4-a #imgBoxA4-a,
+    #artA4-b #imgBoxA4-b{ 
+      height: 150px;
+    }
+    #artA1 #imgBoxA1 img{
+      object-fit: cover;
+      object-position: 50% 15%;
+    }
+    #artA2-a #imgBoxA2-a img{
+      object-fit: cover;
+      object-position: 50% 42%;
+    }
+    #artA2-b #imgBoxA2-b img{
+      object-fit: cover;
+      object-position: 50% 16%;
+    }
+    #artA3 #imgBoxA3 img{
+      object-fit: none;
+      object-position: 50% 45%;
+    }
+  #artA4-a #imgBoxA4-a img{
+      object-fit: cover;
+      object-position: 50% 15%;
+    }
+  #artA4-b #imgBoxA4-b img{
+      object-fit: cover;
+      object-position: 50% 25%;
+    }
+  }
+  
+  /* -- -- -- -- Media Queries Footer -- -- -- -- */
+
+  @media all and (min-width: 860px)and (max-width: 1024px){
+    #footer-hebergements, #footer-assistance{
+      margin-left: 80px;
+    }
+  }  
+  @media all and (max-width:579px){
+    footer .contenu{
+      margin-bottom: 30px;
+    }
+  }
+  
+  }
