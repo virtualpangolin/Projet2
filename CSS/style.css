@@ -626,7 +626,6 @@ footer ul li{
 
 /* -- -- -- -- Media Queries Grid Hébergements -- -- -- -- */
 
-/*Hebergements et Populaires sont alignés*/
 @media all and (min-width: 1025px) and (max-width: 1300px){
     #hebergements.grid{
       display: grid;
@@ -641,7 +640,6 @@ footer ul li{
     }
   }
 
-/*grid hebergements sous populaires*/
 @media all and (min-width: 721px) and (max-width: 1024px){
     #hebergements.grid{
       display: grid;
