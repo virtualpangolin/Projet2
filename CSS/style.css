@@ -460,6 +460,7 @@ main .artPopulaires img{
     flex-direction: column;
     height: auto;
     padding-right: 25px;
+    padding-left: 10px;
     justify-content: space-between;
 }
 
