@@ -367,7 +367,7 @@ button{
 .artHebergements{
     width: 100%;
     max-height: 200px;
-    min-width: 250px;
+    min-width: 190px;
     border-radius: 20px;
     box-shadow: 1px 2px 5px #cccccc;
     background-color: #FFFFFF;
@@ -933,7 +933,6 @@ footer ul li{
       width: 45px;
       height: 45px;
     }
-  
   }   
   
   /* -- -- -- -- Media Queries Filtres -- -- -- -- */
@@ -946,6 +945,9 @@ footer ul li{
       display: inline-block;
       margin-bottom: 20px;
     }
+  }
+  #main-filtres .filter-flex{
+    display: flex;
   }
   @media all and (min-width: 376px) and (max-width: 426px){
     #main-filtres li{
@@ -961,7 +963,19 @@ footer ul li{
       padding-right: 15px;
     }
   }
-  
+
+  @media all and (min-width: 768px){
+    #main-filtres .filter-flex2{
+      display: flex;
+    }
+  }
+
+  @media all and (min-width: 935px){
+    #main-filtres ul{
+      display: flex;
+      flex-direction: row;
+    }
+  }
   /* -- -- -- -- Media Queries Hebergements -- -- -- -- */
 
   @media all and (max-width: 579px){
